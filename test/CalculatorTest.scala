@@ -62,6 +62,12 @@ class CalculatorTest extends WordSpec with ShouldMatchers {
       total shouldBe "36.80"
     }
 
+    "charge 52.00 for boying three of the first book, three of the third book and one of the third book" in {
+      val order = Order(Seq(Book.BOOK_ONE, Book.BOOK_ONE, Book.BOOK_ONE, Book.BOOK_TWO, Book.BOOK_TWO, Book.BOOK_TWO, Book.BOOK_THREE))
+      val total = Calculator.calculateTotal(order)
+
+      total shouldBe "52.00"
+    }
   }
 
 }
