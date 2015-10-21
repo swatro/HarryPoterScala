@@ -1,7 +1,5 @@
 
-import org.scalatest.WordSpec
-import org.scalatest.matchers.ShouldMatchers
-
+import org.scalatest.{ShouldMatchers, WordSpec}
 class CalculatorTest extends WordSpec with ShouldMatchers {
 
   "Calculator" should {
@@ -10,7 +8,15 @@ class CalculatorTest extends WordSpec with ShouldMatchers {
       val order = Order(Seq(Book("BOOK_ONE")))
       val total = Calculator.getTotal(order)
 
-      total should equal("8.00")
+      total shouldBe "8.00"
+    }
+
+    "charge 16 EUR for two copies of the first Harry Potter book" in {
+      val order = Order(Seq(Book("BOOK_ONE"), Book("BOOK_ONE")))
+      val total = Calculator.getTotal(order)
+
+      total shouldBe "16.00"
+
     }
   }
 
