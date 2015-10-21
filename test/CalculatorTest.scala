@@ -1,4 +1,5 @@
 
+import models.{Order, Book}
 import org.scalatest.{ShouldMatchers, WordSpec}
 class CalculatorTest extends WordSpec with ShouldMatchers {
 

@@ -1,3 +1,5 @@
+package models
+
 
 object Book extends Enumeration{
   type Book = Value

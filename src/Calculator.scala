@@ -1,3 +1,5 @@
+import models.Order
+
 import scala.math.BigDecimal.RoundingMode
 
 object Calculator {
