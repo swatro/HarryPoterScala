@@ -16,8 +16,8 @@ object Calculator {
   }
 
   def findAllDiscounts(order: Order) : Seq[Discount] = {
-    val numberOfEachBookInOrder: Map[models.Book.Book, Int] = order.books.groupBy(l => l).map(t => (t._1, t._2.length))
-    val discounts: IndexedSeq[Discount] = (1 to numberOfEachBookInOrder.values.max).map(x => Discount(numberOfEachBookInOrder.values.count(y => y >= x)))
+    val numberOfBooks: Map[models.Book.Book, Int] = order.books.groupBy(l => l).map(t => (t._1, t._2.length))
+    val discounts: IndexedSeq[Discount] = (1 to numberOfBooks.values.max).map(size => Discount(numberOfBooks.values.count(bookCount => bookCount >= size)))
     discounts.toSeq
   }
 
