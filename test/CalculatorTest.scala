@@ -25,6 +25,28 @@ class CalculatorTest extends WordSpec with ShouldMatchers {
 
       total shouldBe "15.20"
     }
+
+    "charge 21.60 EUR for buying three different Harry Potter books" in {
+      val order = Order(Seq(Book.BOOK_ONE, Book.BOOK_TWO, Book.BOOK_THREE))
+      val total = Calculator.getTotal(order)
+
+      total shouldBe "21.60"
+    }
+
+    "charge 25.60 for buying four different Harry Potter books" in {
+      val order = Order(Seq(Book.BOOK_ONE, Book.BOOK_TWO, Book.BOOK_THREE, Book.BOOK_FOUR))
+      val total = Calculator.getTotal(order)
+
+      total shouldBe "25.60"
+    }
+
+    "charge 30.00 for buying four different Harry Potter books" in {
+      val order = Order(Seq(Book.BOOK_ONE, Book.BOOK_TWO, Book.BOOK_THREE, Book.BOOK_FOUR, Book.BOOK_FIVE))
+      val total = Calculator.getTotal(order)
+
+      total shouldBe "30.00"
+    }
+
   }
 
 }
