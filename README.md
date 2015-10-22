@@ -1,5 +1,7 @@
 # HarryPoterScala
 
+[![Build Status](https://travis-ci.org/swatro/HarryPoterScala.svg?branch=master)](https://travis-ci.org/swatro/HarryPoterScala)
+
 Problem Discription: 
 (copied from  http://www.codingdojo.org/cgi-bin/index.pl?action=browse&id=KataPotter&revision=41)
 
